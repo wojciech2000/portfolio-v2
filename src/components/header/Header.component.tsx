@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import { AiOutlineHome } from "react-icons/ai";
 import { FaHamburger } from "react-icons/fa";
-import Container from "../common/container/Container.component";
-import Title from "../common/title/Title.component";
-import SocialLinks from "../socialLinks/SocialLinks.component";
-import useToggle from "../../utilities/hooks/useToggle.hook";
+import Container from "components/common/container/Container.component";
+import Title from "components/common/title/Title.component";
+import SocialLinks from "components/socialLinks/SocialLinks.component";
+import useToggle from "utilities/hooks/useToggle.hook";
 
 const ICON_CLASSES = "text-white w-8 h-8";
 

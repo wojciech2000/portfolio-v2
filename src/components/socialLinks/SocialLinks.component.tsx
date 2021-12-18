@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
-import { HiChevronUp, HiArchive } from "react-icons/hi";
+import { HiChevronUp } from "react-icons/hi";
 import clsx from "clsx";
-import useToggle from "../../utilities/hooks/useToggle.hook";
+import useToggle from "utilities/hooks/useToggle.hook";
 
 const ICON_CLASSES = "text-white w-10 h-10";
 const socialMedias = [
@@ -29,7 +28,7 @@ const SocialLinks = () => {
         )}
       >
         {socialMedias.map(({ Icon, link }, index, arr) => (
-          <div className="flex flex-col justify-center items-center mb-2">
+          <div key={index} className="flex flex-col justify-center items-center mb-2">
             <a href={link} target="_blank">
               <button className="mb-2">{Icon}</button>
             </a>
