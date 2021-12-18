@@ -7,6 +7,9 @@ module.exports = {
       spacing: {
         "mobile-spacing": "16px",
       },
+      backgroundColor: {
+        mainBg: "#626262",
+      },
     },
   },
   variants: {},
