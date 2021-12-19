@@ -41,7 +41,7 @@ interface IMenuProps {
 const Menu: React.FC<IMenuProps> = ({ isOpen, wrapperClassName }) => (
   <div
     className={clsx(
-      "bg-black top-0 left-0 pt-24 w-full h-screen z-10 transform duration-200 overflow-hidden",
+      "fixed bg-black top-0 left-0 pt-24 w-full h-screen z-10 transform duration-200 overflow-hidden md:static",
       `translate-x-${isOpen ? "0" : "full"}`,
       wrapperClassName,
     )}

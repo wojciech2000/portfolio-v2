@@ -7,7 +7,11 @@ interface IProps {
 }
 
 const Container: React.FC<IProps> = ({ children, className }) => (
-  <div className={clsx("px-mobile-spacing sm:px-24 w-full m-auto", className)}>{children}</div>
+  // spaceing from header positioned fixedly
+  <div className="w-full m-auto pt-mobile-header md:mt-0 md:px-0 md:pl-desktop-header">
+    {/* inner spaceing of content */}
+    <div className={clsx("p-mobile-spacing md:p-16", className)}>{children}</div>
+  </div>
 );
 
 export default Container;

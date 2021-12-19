@@ -7,6 +7,7 @@ import SocialLinks from "components/header/socialLinks/SocialLinks.component";
 import Menu from "./menu/Menu.component";
 import useToggle from "utilities/hooks/useToggle.hook";
 import { useIsMobile } from "utilities/hooks/useIsMobile.hook";
+import { Link } from "react-router-dom";
 
 const ICON_CLASSES = "text-white w-8 h-8";
 
@@ -24,14 +25,16 @@ const Header = () => {
         onMouseEnter={toggleDesktop}
         onMouseLeave={toggleDesktop}
         className={clsx(
-          "bg-black w-full fixed top-0 left-0 border-b-2 border-white z-20 md:w-16 md:transition-width md:duration-200",
-          isOpen && "md:w-80",
+          "bg-black w-full fixed top-0 left-0 border-b-2 border-white z-20 md:w-80 md:transition-width md:duration-200",
+          !isOpen && "md:w-desktop-header",
         )}
       >
-        <div className="px-mobile-spacing flex justify-between items-center h-14 md:h-screen md:flex-col md:pt-8 md:items-baseline">
-          <button>
-            <AiOutlineHome className={ICON_CLASSES} />
-          </button>
+        <div className="px-mobile-spacing flex justify-between items-center h-mobile-header md:h-screen md:flex-col md:pt-8 md:items-baseline">
+          <Link to="/">
+            <button>
+              <AiOutlineHome className={ICON_CLASSES} />
+            </button>
+          </Link>
 
           <button onClick={toggleOpen} className="md:hidden">
             <FaHamburger className={ICON_CLASSES} />
