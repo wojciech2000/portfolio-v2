@@ -6,23 +6,23 @@ import Home from "components/home/Home.component";
 import { routes } from "utilities/helpers/routes";
 import About from "components/about/About.component";
 import Skills from "components/skills/Skills.component";
+import Projects from "components/projects/Projects.component";
 
-function App() {
-  return (
-    <div className="w-full min-h-screen bg-mainBg">
-      <Router>
-        <Header />
+const App = () => (
+  <div className="w-full min-h-screen bg-mainBg w-">
+    <Router>
+      <Header />
 
-        <Routes>
-          <Route path={routes.home} element={<Home />} />
-          <Route path={routes.about} element={<About />} />
-          <Route path={routes.skills} element={<Skills />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path={routes.home} element={<Home />} />
+        <Route path={routes.about} element={<About />} />
+        <Route path={routes.skills} element={<Skills />} />
+        <Route path={routes.projects} element={<Projects />} />
+      </Routes>
+    </Router>
 
-      {/* <Particles /> */}
-    </div>
-  );
-}
+    <Particles />
+  </div>
+);
 
 export default App;

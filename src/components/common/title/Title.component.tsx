@@ -4,7 +4,7 @@ import React, { ReactNode } from "react";
 const sizes = ["24", "30", "36", "48"] as const;
 
 type Sizes = typeof sizes[number];
-type Colors = "white" | "black";
+type Colors = "white" | "black" | "secondary";
 
 interface ITitleProps {
   size?: Sizes;

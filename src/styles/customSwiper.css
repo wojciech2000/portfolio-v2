@@ -1,0 +1,17 @@
+/* custom swiper pagination bullets */
+.swiper-pagination {
+  position: fixed !important;
+  bottom: 36px !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: white !important;
+  width: 20px !important;
+  height: 5px !important;
+  border-radius: 2px !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #e05f16 !important;
+}

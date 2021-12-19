@@ -1,15 +1,19 @@
 import { useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination, Controller, Thumbs } from "swiper";
-import "swiper/css";
+import SwiperCore, { Thumbs } from "swiper";
 import clsx from "clsx";
 
 import Container from "components/common/container/Container.component";
 import Text from "components/common/text/Text.component";
 import { skillsList } from "utilities/helpers/skillsList";
 
-SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
+SwiperCore.use([Thumbs]);
+
+const swiperProps = {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  className: "mb-8 w-full",
+};
 
 const Skills = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>();
@@ -18,12 +22,7 @@ const Skills = () => {
   return (
     <Container>
       <div className="w-full md:max-w-4xl">
-        <Swiper
-          onSwiper={setThumbsSwiper}
-          slidesPerView={3}
-          spaceBetween={30}
-          className="mb-8 w-full"
-        >
+        <Swiper onSwiper={setThumbsSwiper} {...swiperProps}>
           {skillsList.map(({ icon, label }, index) => (
             <SwiperSlide
               key={index}
