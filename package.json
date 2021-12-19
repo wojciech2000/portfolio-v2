@@ -24,6 +24,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-tsparticles": "^1.37.5",
+    "swiper": "^7.3.3",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.5.4"
   },

@@ -56,7 +56,7 @@ const Menu: React.FC<IMenuProps> = ({ isOpen, wrapperClassName }) => (
         <li key={index}>
           <Link to={path} className="flex items-center mb-6 relative md:mb-8">
             {icon}
-            <Title className="ml-4 md:ml-12 md:absolute md:whitespace-nowrap">{label}</Title>
+            <Title className="pl-4 md:pl-12 md:absolute md:whitespace-nowrap">{label}</Title>
           </Link>
         </li>
       ))}
