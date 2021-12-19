@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "components/header/Header.component";
 import Particles from "components/particles/Particles.component";
 import Home from "components/home/Home.component";
+import { routes } from "utilities/helpers/routes";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path={routes.home} element={<Home />} />
         </Routes>
       </Router>
 

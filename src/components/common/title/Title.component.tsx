@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React, { ReactNode } from "react";
 
-const sizes = ["24", "30"] as const;
+const sizes = ["24", "30", "36", "48"] as const;
 
 type Sizes = typeof sizes[number];
 type Colors = "white" | "black";
@@ -34,7 +34,7 @@ const setHeadingTag = (size: Sizes) => {
   return selectedSize?.headingNumber || MAX_HEADING_TAG_NUMBER;
 };
 
-const Title: React.FC<ITitleProps> = ({ size = "24", color = "primary", className, children }) => {
+const Title: React.FC<ITitleProps> = ({ size = "24", color = "white", className, children }) => {
   const Heading = `h${setHeadingTag(size)}` as keyof JSX.IntrinsicElements;
 
   return (
@@ -44,6 +44,8 @@ const Title: React.FC<ITitleProps> = ({ size = "24", color = "primary", classNam
         {
           "text-2xl md:text-3xl": size === "24",
           "text-3xl md:text-4xl": size === "30",
+          "text-4xl md:text-6xl": size === "36",
+          "text-5xl md:text-7xl": size === "48",
         },
         className,
       )}

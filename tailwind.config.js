@@ -12,21 +12,24 @@ module.exports = {
   // mode: "jit",
   theme: {
     extend: {
+      colors: {
+        mainBg: "#626262",
+        primary: "#353535",
+        secondary: "#E05F16",
+      },
       spacing: {
         "mobile-spacing": "16px",
         ...mobileHeader,
         ...desktopHeader,
-      },
-      backgroundColor: {
-        mainBg: "#626262",
-        primary: "#353535",
-        secondary: "#E05F16",
       },
       transitionProperty: {
         width: "width",
       },
       height: {
         ...mobileHeader,
+      },
+      width: {
+        fit: "fit-content",
       },
     },
   },

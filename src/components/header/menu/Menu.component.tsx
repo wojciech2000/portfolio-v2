@@ -7,28 +7,29 @@ import { AiOutlineMail } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 import Title from "components/common/title/Title.component";
+import { routes as routesPaths } from "utilities/helpers/routes";
 
 const ICON_CLASSES = "w-7 h-7";
 
 const routes = [
   {
     label: "About me",
-    path: "/about",
+    path: routesPaths.about,
     icon: <RiUser3Line className={ICON_CLASSES} />,
   },
   {
     label: "My skills",
-    path: "/skills",
+    path: routesPaths.skills,
     icon: <IoMdListBox className={ICON_CLASSES} />,
   },
   {
     label: "Personal projects",
-    path: "/projects",
+    path: routesPaths.projects,
     icon: <BsCodeSlash className={ICON_CLASSES} />,
   },
   {
     label: "Contact with me",
-    path: "/contact",
+    path: routesPaths.contact,
     icon: <AiOutlineMail className={ICON_CLASSES} />,
   },
 ];

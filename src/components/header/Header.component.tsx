@@ -8,6 +8,7 @@ import Menu from "./menu/Menu.component";
 import useToggle from "utilities/hooks/useToggle.hook";
 import { useIsMobile } from "utilities/hooks/useIsMobile.hook";
 import { Link } from "react-router-dom";
+import { routes } from "utilities/helpers/routes";
 
 const ICON_CLASSES = "text-white w-8 h-8";
 
@@ -30,7 +31,7 @@ const Header = () => {
         )}
       >
         <div className="px-mobile-spacing flex justify-between items-center h-mobile-header md:h-screen md:flex-col md:pt-8 md:items-baseline">
-          <Link to="/">
+          <Link to={routes.home}>
             <button>
               <AiOutlineHome className={ICON_CLASSES} />
             </button>
