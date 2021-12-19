@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 import useToggle from "utilities/hooks/useToggle.hook";
 
-const ICON_CLASSES = "text-white w-10 h-10";
+const ICON_CLASSES = "text-white w-10 h-10 md:w-8 md:h-8";
 const socialMedias = [
   {
     icon: <AiFillGithub className={ICON_CLASSES} />,
@@ -21,27 +21,37 @@ const SocialLinks = () => {
   const [isOpen, toggleOpen] = useToggle(false);
 
   return (
-    <div className="fixed bottom-0 right-mobile-spacing z-50">
+    <div className="fixed bottom-0 right-mobile-spacing z-50 md:static">
       <div
         className={clsx(
-          "duration-200 transform transition-transform",
+          "duration-200 transform transition-transform md:translate-y-0",
           `translate-y-${isOpen ? "0" : "full"}`,
         )}
       >
-        {socialMedias.map(({ icon, link }, index, arr) => (
-          <div key={index} className="flex flex-col justify-center items-center mb-2">
-            <a href={link} target="_blank">
-              <button className="mb-2">{icon}</button>
-            </a>
+        {socialMedias.map(({ icon, link }, index, arr) => {
+          const isLast = index === arr.length - 1;
 
-            <div className={clsx("w-0.5 bg-white", index === arr.length - 1 ? "h-20" : "h-8")} />
-          </div>
-        ))}
+          return (
+            <div
+              key={index}
+              className={clsx(
+                "flex flex-col justify-center items-center mb-2",
+                isLast && "md:mb-0",
+              )}
+            >
+              <a href={link} target="_blank">
+                <button className="mb-2">{icon}</button>
+              </a>
+
+              <div className={clsx("w-0.5 bg-white", isLast ? "h-20" : "h-8")} />
+            </div>
+          );
+        })}
       </div>
 
       <button
         onClick={toggleOpen}
-        className="absolute bottom-0 left-1/2 transform transition-transform translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full"
+        className="absolute bottom-0 left-1/2 transform transition-transform translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full md:hidden"
       >
         <HiChevronUp
           className={clsx(
