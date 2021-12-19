@@ -2,16 +2,17 @@ import { BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
 import { HiChevronUp } from "react-icons/hi";
 import clsx from "clsx";
+
 import useToggle from "utilities/hooks/useToggle.hook";
 
 const ICON_CLASSES = "text-white w-10 h-10";
 const socialMedias = [
   {
-    Icon: <AiFillGithub className={ICON_CLASSES} />,
+    icon: <AiFillGithub className={ICON_CLASSES} />,
     link: "https://github.com/wojciech2000",
   },
   {
-    Icon: <BsLinkedin className={ICON_CLASSES} />,
+    icon: <BsLinkedin className={ICON_CLASSES} />,
     link: "https://www.linkedin.com/in/wojciech-antonik-853868205/",
   },
 ];
@@ -27,10 +28,10 @@ const SocialLinks = () => {
           `translate-y-${isOpen ? "0" : "full"}`,
         )}
       >
-        {socialMedias.map(({ Icon, link }, index, arr) => (
+        {socialMedias.map(({ icon, link }, index, arr) => (
           <div key={index} className="flex flex-col justify-center items-center mb-2">
             <a href={link} target="_blank">
-              <button className="mb-2">{Icon}</button>
+              <button className="mb-2">{icon}</button>
             </a>
 
             <div className={clsx("w-0.5 bg-white", index === arr.length - 1 ? "h-20" : "h-8")} />

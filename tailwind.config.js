@@ -10,6 +10,9 @@ module.exports = {
       backgroundColor: {
         mainBg: "#626262",
       },
+      transitionProperty: {
+        width: "width",
+      },
     },
   },
   variants: {},
