@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useIsMobile } from "./useIsMobile.hook";
 
-export default (defaultValue: boolean): [boolean, () => void] => {
+export default (defaultValue: boolean): [boolean, (value?: boolean) => void] => {
   const [value, setValue] = useState(defaultValue);
   const { isMobile } = useIsMobile();
 

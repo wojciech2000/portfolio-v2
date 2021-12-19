@@ -50,7 +50,7 @@ const SocialLinks = () => {
       </div>
 
       <button
-        onClick={toggleOpen}
+        onClick={() => toggleOpen()}
         className="absolute bottom-0 left-1/2 transform transition-transform translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full md:hidden"
       >
         <HiChevronUp

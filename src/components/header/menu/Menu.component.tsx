@@ -36,15 +36,14 @@ const routes = [
 
 interface IMenuProps {
   isOpen: boolean;
-  wrapperClassName?: string;
+  closeMenu: () => void;
 }
 
-const Menu: React.FC<IMenuProps> = ({ isOpen, wrapperClassName }) => (
+const Menu: React.FC<IMenuProps> = ({ isOpen, closeMenu }) => (
   <div
     className={clsx(
-      "fixed bg-black top-0 left-0 pt-24 w-full h-screen z-10 transform duration-200 overflow-hidden md:static",
+      "fixed bg-black top-0 left-0 border-t-2 border-white pt-16 w-full h-screen z-10 transform duration-200 mt-mobile-header overflow-hidden md:mt-0 md:static md:translate-x-0",
       `translate-x-${isOpen ? "0" : "full"}`,
-      wrapperClassName,
     )}
   >
     <ul
@@ -54,7 +53,7 @@ const Menu: React.FC<IMenuProps> = ({ isOpen, wrapperClassName }) => (
     >
       {routes.map(({ label, path, icon }, index) => (
         <li key={index}>
-          <Link to={path} className="flex items-center mb-6 relative md:mb-8">
+          <Link to={path} onClick={closeMenu} className="flex items-center mb-6 relative md:mb-8">
             {icon}
             <Title className="pl-4 md:pl-12 md:absolute md:whitespace-nowrap">{label}</Title>
           </Link>
