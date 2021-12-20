@@ -31,6 +31,9 @@ module.exports = {
       width: {
         fit: "fit-content",
       },
+      screens: {
+        xs: "568px",
+      },
     },
   },
   variants: {},

@@ -7,6 +7,7 @@ import { routes } from "utilities/helpers/routes";
 import About from "components/about/About.component";
 import Skills from "components/skills/Skills.component";
 import Projects from "components/projects/Projects.component";
+import Contact from "components/contact/Contact.component";
 
 const App = () => (
   <div className="w-full min-h-screen bg-mainBg w-">
@@ -18,6 +19,7 @@ const App = () => (
         <Route path={routes.about} element={<About />} />
         <Route path={routes.skills} element={<Skills />} />
         <Route path={routes.projects} element={<Projects />} />
+        <Route path={routes.contact} element={<Contact />} />
       </Routes>
     </Router>
 
