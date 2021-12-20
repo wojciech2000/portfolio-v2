@@ -16,6 +16,7 @@ module.exports = {
         mainBg: "#626262",
         primary: "#353535",
         secondary: "#E05F16",
+        error: "#E7320E",
       },
       spacing: {
         "mobile-spacing": "16px",

@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 import "styles/index.css";
+import "styles/input.css";
 import "styles/customSwiper.css";
 import "swiper/css";
 import "swiper/css/pagination";

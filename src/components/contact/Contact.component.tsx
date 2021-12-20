@@ -1,9 +1,26 @@
 import Container from "components/common/container/Container.component";
 import Text from "components/common/text/Text.component";
 import Title from "components/common/title/Title.component";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { FaPaperPlane } from "react-icons/fa";
+import { contactFormSchema, IContactForm } from "./Contact.model";
+import Input from "components/common/input/Input.component";
+import Textarea from "components/common/textarea/Textarea.component";
 
 const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IContactForm>({
+    resolver: yupResolver(contactFormSchema),
+  });
+
+  const onSubmit = (data: IContactForm) => {
+    console.log(data);
+  };
+
   return (
     <Container>
       <div className="bg-primary rounded-xl w-full px-4 py-8 md:max-w-5xl md:px-8 md:py-12">
@@ -13,32 +30,19 @@ const Contact = () => {
           <Title size="30">Be in touch</Title>
         </div>
 
-        <form className="flex flex-col">
-          <div className="mb-4">
-            <label htmlFor="name" className="block mb-2">
-              <Text size="20">Name</Text>
-            </label>
+        <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+          <Input label="Name" name="name" register={register("name")} error={errors.name} />
 
-            <input type="text" id="name" className="w-full p-1.5 rounded-md md:w-1/3" />
-          </div>
+          <Input label="Email" name="email" register={register("email")} error={errors.email} />
 
-          <div className="mb-4">
-            <label htmlFor="email" className="block mb-2">
-              <Text size="20">Email</Text>
-            </label>
+          <Textarea
+            label="Message"
+            name="message"
+            register={register("message")}
+            error={errors.message}
+          />
 
-            <input type="email" id="email" className="w-full p-1.5 rounded-md md:w-1/3" />
-          </div>
-
-          <div className="mb-4">
-            <label htmlFor="message" className="block mb-2">
-              <Text size="20">Message</Text>
-            </label>
-
-            <textarea id="message" className="w-full p-1.5 rounded-md" />
-          </div>
-
-          <button className="w-full bg-secondary py-2 rounded-lg mx-auto xs:w-72">
+          <button type="submit" className="w-full bg-secondary py-2 rounded-lg mx-auto xs:w-72">
             <Text size="24">Submit</Text>
           </button>
         </form>
