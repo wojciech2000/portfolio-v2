@@ -27,6 +27,7 @@ module.exports = {
         width: "width",
       },
       height: {
+        fit: "fit-content",
         ...mobileHeader,
       },
       width: {

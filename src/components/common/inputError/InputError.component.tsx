@@ -7,7 +7,7 @@ interface IInputError {
 }
 
 const InputError: React.FC<IInputError> = ({ errorMessage }) => (
-  <Text size="12" color="error" className="absolute bottom-0 left-0">
+  <Text size="12" color="error" className="absolute bottom-1 left-0">
     {errorMessage}
   </Text>
 );

@@ -21,12 +21,12 @@ const Skills = () => {
 
   return (
     <Container>
-      <div className="w-full md:max-w-4xl">
+      <div className="w-full flex flex-col h-full md:max-w-4xl">
         <Swiper onSwiper={setThumbsSwiper} {...swiperProps}>
           {skillsList.map(({ icon, label }, index) => (
             <SwiperSlide
               key={index}
-              className="flex flex-col justify-center items-center cursor-pointer md:cursor-default"
+              className="flex flex-col justify-start items-center cursor-pointer md:cursor-default"
             >
               <div className="bg-white p-4 rounded-full mb-2 w-16 h-16 flex justify-center items-center md:w-20 md:h-20">
                 {icon}
@@ -58,16 +58,16 @@ const Skills = () => {
               slidesPerView: 3,
             },
           }}
-          className="w-full flex-1 overflow-y-auto"
+          className="w-full flex-1"
         >
           {skillsList.map(({ skills }, index) => (
             <SwiperSlide
               key={index}
-              className="bg-primary rounded-xl w-full py-8 flex justify-center overflow-x-auto h-auto overflow-y-auto"
+              className="bg-primary rounded-xl w-full flex justify-center !h-auto"
             >
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col">
                 {skills.map((skill, index) => (
-                  <li key={index} className="text-center">
+                  <li key={index} className="text-center pb-4 first:pt-8 last:pb-8">
                     <Text size="20">{skill}</Text>
                   </li>
                 ))}

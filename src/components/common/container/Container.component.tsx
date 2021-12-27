@@ -8,11 +8,11 @@ interface IProps {
 
 const Container: React.FC<IProps> = ({ children, className }) => (
   // spaceing from header positioned fixedly
-  <div className="absolute z-10 w-full m-auto pt-mobile-header md:mt-0 md:px-0 md:pl-desktop-header">
+  <div className="absolute z-10 w-full h-screen m-auto pt-mobile-header md:pt-0 md:px-0 md:pl-desktop-header">
     {/* inner spaceing of content */}
     <div
       className={clsx(
-        "px-mobile-spacing py-12 md:p-16 flex justify-center items-center",
+        "h-full px-mobile-spacing py-12 flex justify-center items-baseline md:items-center md:py-24 md:px-16",
         className,
       )}
     >

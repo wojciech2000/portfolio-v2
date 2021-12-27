@@ -15,15 +15,15 @@ const swiperProps = {
   slidesPerView: 1,
   spaceBetween: 30,
   breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3, slidesPerGroup: 3 } },
-  className: "max-w-7xl",
+  className: "max-w-7xl h-full md:h-fit",
 };
 
 const Projects = () => (
   <Container>
     <Swiper {...swiperProps}>
       {projectsList.map(({ name, desktop, mobile, githubLink, liveLink, technologies }, index) => (
-        <SwiperSlide key={index}>
-          <div className="bg-primary p-4 rounded-xl w-full">
+        <SwiperSlide className="!h-full md:!h-auto flex" key={index}>
+          <div className="bg-primary p-4 rounded-xl w-full ">
             <div className="flex mb-4">
               <div className="w-9/12 pr-4">
                 <img src={desktop} alt={name} className="object-cover rounded-xl" />

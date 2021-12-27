@@ -1,17 +1,12 @@
 /* custom swiper pagination bullets */
 .swiper-pagination {
-  position: fixed !important;
-  bottom: 36px !important;
+  @apply !fixed !bottom-3 md:!bottom-8;
 }
 
 .swiper-pagination-bullet {
-  background-color: white !important;
-  width: 20px !important;
-  height: 5px !important;
-  border-radius: 2px !important;
-  opacity: 1 !important;
+  @apply !bg-white !w-5 !h-[5px] !rounded-sm !opacity-100;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #e05f16 !important;
+  @apply !bg-secondary;
 }
