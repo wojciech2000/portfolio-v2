@@ -25,7 +25,7 @@ const SocialLinks = () => {
       <div
         className={clsx(
           "duration-200 transform transition-transform md:translate-y-0",
-          `translate-y-${isOpen ? "0" : "full"}`,
+          isOpen ? "translate-y-0" : "translate-y-full",
         )}
       >
         {socialMedias.map(({ icon, link }, index, arr) => {
@@ -56,7 +56,7 @@ const SocialLinks = () => {
         <HiChevronUp
           className={clsx(
             "text-2xl absolute top-0 left-1/2 transform -translate-x-1/2 duration-200",
-            `rotate-${isOpen ? "180" : "0"}`,
+            isOpen ? "rotate-180" : "rotate-0",
           )}
         />
       </button>

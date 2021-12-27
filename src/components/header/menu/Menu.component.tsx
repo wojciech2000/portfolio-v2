@@ -43,7 +43,7 @@ const Menu: React.FC<IMenuProps> = ({ isOpen, closeMenu }) => (
   <div
     className={clsx(
       "fixed bg-black top-0 left-0 border-t-2 border-white pt-16 w-full h-screen z-10 transform duration-200 mt-mobile-header overflow-hidden md:mt-0 md:static md:translate-x-0",
-      `translate-x-${isOpen ? "0" : "full"}`,
+      isOpen ? "translate-x-0" : "translate-x-full",
     )}
   >
     <ul

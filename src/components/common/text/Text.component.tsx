@@ -14,12 +14,18 @@ interface ITitleProps {
 const Text: React.FC<ITitleProps> = ({ size = "16", color = "white", className, children }) => (
   <p
     className={clsx(
-      `text-${color}`,
       {
+        // FONT-SIZE
         "text-xs": size === "12",
         "text-base": size === "16",
         "text-xl": size === "20",
         "text-2xl md:text-3xl": size === "24",
+
+        // COLOR
+        "text-black": color === "black",
+        "text-white": color === "white",
+        "text-secondary": color === "secondary",
+        "text-error": color === "error",
       },
       className,
     )}

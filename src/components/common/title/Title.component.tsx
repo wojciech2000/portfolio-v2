@@ -40,12 +40,17 @@ const Title: React.FC<ITitleProps> = ({ size = "24", color = "white", className,
   return (
     <Heading
       className={clsx(
-        `text-${color}`,
         {
+          // FONT-SIZE
           "text-2xl md:text-3xl": size === "24",
           "text-3xl md:text-4xl": size === "30",
           "text-4xl md:text-6xl": size === "36",
           "text-5xl md:text-7xl": size === "48",
+
+          // COLOR
+          "text-black": color === "black",
+          "text-white": color === "white",
+          "text-secondary": color === "secondary",
         },
         className,
       )}
