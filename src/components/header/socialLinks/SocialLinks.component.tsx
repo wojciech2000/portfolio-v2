@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { BsLinkedin } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
 import { HiChevronUp } from "react-icons/hi";
 import clsx from "clsx";
+import { useLocation } from "react-router-dom";
 
 import useToggle from "utilities/hooks/useToggle.hook";
 
@@ -18,7 +20,14 @@ const socialMedias = [
 ];
 
 const SocialLinks = () => {
+  const { pathname } = useLocation();
+
   const [isOpen, toggleOpen] = useToggle(false);
+
+  useEffect(() => {
+    const isHomePage = pathname === "/";
+    toggleOpen(isHomePage);
+  }, [pathname]);
 
   return (
     <div className="fixed bottom-0 right-mobile-spacing z-50 md:static">

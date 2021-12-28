@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Container from "components/common/container/Container.component";
 import Text from "components/common/text/Text.component";
 import { skillsList } from "utilities/helpers/skillsList";
+import Title from "components/common/title/Title.component";
 
 SwiperCore.use([Thumbs]);
 
@@ -31,8 +32,8 @@ const Skills = () => {
               <div className="bg-white p-4 rounded-full mb-2 w-16 h-16 flex justify-center items-center md:w-20 md:h-20">
                 {icon}
               </div>
-              <Text
-                size="20"
+              <Title
+                size="16"
                 color="black"
                 className={clsx(
                   "text-center bg-white rounded-lg px-2 w-full transition-colors duration-150",
@@ -43,7 +44,7 @@ const Skills = () => {
                 >
                   {label}
                 </span>
-              </Text>
+              </Title>
             </SwiperSlide>
           ))}
         </Swiper>

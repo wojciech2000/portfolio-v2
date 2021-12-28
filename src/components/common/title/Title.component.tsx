@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React, { ReactNode } from "react";
 
-const sizes = ["24", "30", "36", "48"] as const;
+const sizes = ["16", "24", "30", "36", "48"] as const;
 
 type Sizes = typeof sizes[number];
 type Colors = "white" | "black" | "secondary";
@@ -42,6 +42,7 @@ const Title: React.FC<ITitleProps> = ({ size = "24", color = "white", className,
       className={clsx(
         {
           // FONT-SIZE
+          "text-base md:text-xl": size === "16",
           "text-2xl md:text-3xl": size === "24",
           "text-3xl md:text-4xl": size === "30",
           "text-4xl md:text-6xl": size === "36",
