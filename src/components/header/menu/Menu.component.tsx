@@ -42,13 +42,13 @@ interface IMenuProps {
 const Menu: React.FC<IMenuProps> = ({ isOpen, closeMenu }) => (
   <div
     className={clsx(
-      "fixed bg-black top-0 left-0 border-t-2 border-white pt-16 w-full h-screen z-10 transform duration-200 mt-mobile-header overflow-hidden md:mt-0 md:static md:translate-x-0",
+      "fixed bg-black top-0 left-0 border-t-2 border-white pt-16 w-full h-screen z-10 transform duration-200 mt-mobile-header overflow-y-auto md:mt-0 md:static md:translate-x-0",
       isOpen ? "translate-x-0" : "translate-x-full",
     )}
   >
     <ul
       className={clsx(
-        "text-white flex justify-center items-center flex-col pt-8 md:items-baseline",
+        "text-white flex justify-center items-center flex-col pt-8 overflow-hidden md:items-baseline",
       )}
     >
       {routes.map(({ label, path, icon }, index) => (

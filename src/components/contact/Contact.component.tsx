@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <Container>
-      <div className="bg-primary rounded-xl w-full px-4 py-8 h-full flex flex-col justify-evenly md:max-w-5xl md:px-8 md:py-12">
+      <div className="bg-primary rounded-xl w-full h-auto px-4 py-8 flex flex-col justify-evenly md:max-w-5xl md:px-8 md:py-12">
         <div className="flex items-center">
           <FaPaperPlane className="text-white mr-6 w-12 h-12" />
 

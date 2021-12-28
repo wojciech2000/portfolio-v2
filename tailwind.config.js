@@ -3,7 +3,7 @@ const mobileHeader = {
 };
 
 const desktopHeader = {
-  "desktop-header": "64px",
+  "desktop-header": "72px",
 };
 
 module.exports = {

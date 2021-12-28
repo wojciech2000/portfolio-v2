@@ -25,29 +25,27 @@ const Header = () => {
   };
 
   return (
-    <header>
-      <div
-        onMouseEnter={toggleDesktop}
-        onMouseLeave={toggleDesktop}
-        className={clsx(
-          "bg-black w-full fixed top-0 left-0 z-20 md:w-80 md:transition-width md:duration-200",
-          !isOpen && "md:w-desktop-header",
-        )}
-      >
-        <div className="px-mobile-spacing flex justify-between items-center h-mobile-header md:h-screen md:flex-col md:pt-8 md:items-baseline">
-          <Link to={routes.home} onClick={closeMenu}>
-            <button>
-              <AiOutlineHome className={ICON_CLASSES} />
-            </button>
-          </Link>
-
-          <button onClick={() => toggleOpen()} className="md:hidden">
-            <FaHamburger className={ICON_CLASSES} />
+    <header
+      onMouseEnter={toggleDesktop}
+      onMouseLeave={toggleDesktop}
+      className={clsx(
+        "bg-black w-full fixed top-0 left-0 z-20 md:w-80 md:transition-width md:duration-200",
+        !isOpen && "md:w-desktop-header",
+      )}
+    >
+      <div className="px-mobile-spacing flex justify-between items-center h-mobile-header md:h-screen md:flex-col md:pt-8 md:items-baseline">
+        <Link to={routes.home} onClick={closeMenu}>
+          <button>
+            <AiOutlineHome className={ICON_CLASSES} />
           </button>
+        </Link>
 
-          <Menu isOpen={isOpen} closeMenu={closeMenu} />
-          <SocialLinks />
-        </div>
+        <button onClick={() => toggleOpen()} className="md:hidden">
+          <FaHamburger className={ICON_CLASSES} />
+        </button>
+
+        <Menu isOpen={isOpen} closeMenu={closeMenu} />
+        <SocialLinks />
       </div>
     </header>
   );
