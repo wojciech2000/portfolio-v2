@@ -29,8 +29,8 @@ const Header = () => {
       onMouseEnter={toggleDesktop}
       onMouseLeave={toggleDesktop}
       className={clsx(
-        "bg-black w-full fixed top-0 left-0 z-20 md:w-80 md:transition-width md:duration-200",
-        !isOpen && "md:w-desktop-header",
+        "bg-black w-full fixed top-0 left-0 z-20  md:transition-width md:duration-200",
+        !isOpen ? "md:w-desktop-header" : "md:w-80",
       )}
     >
       <div className="px-mobile-spacing flex justify-between items-center h-mobile-header md:h-screen md:flex-col md:pt-8 md:items-baseline">

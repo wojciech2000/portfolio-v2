@@ -8,21 +8,26 @@ import clsx from "clsx";
 type ITextareaProps = IInputTypeProps & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 const Textarea: React.FC<ITextareaProps> = ({ label, error, name, register, ...props }) => (
-  <div className="input-wrapper">
-    <label htmlFor={name} className="block mb-2">
-      <Text size="20">{label}</Text>
+  <div className="relative flex-1 flex flex-col">
+    <label htmlFor={name}>
+      <Text size="20" className="mb-2">
+        {label}
+      </Text>
     </label>
 
     <textarea
       id={name}
-      className={clsx("w-full p-1.5 rounded-md border border-black", {
-        "border-error": error,
-      })}
+      className={clsx(
+        "w-full p-1.5 rounded-md border border-black flex-1 md:flex-auto  resize-none md:resize-y",
+        {
+          "border-error": error,
+        },
+      )}
       {...register}
       {...props}
     />
 
-    <InputError errorMessage={error?.message} />
+    <InputError errorMessage={error?.message} className="-bottom-5" />
   </div>
 );
 

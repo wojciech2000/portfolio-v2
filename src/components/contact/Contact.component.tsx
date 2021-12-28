@@ -23,14 +23,14 @@ const Contact = () => {
 
   return (
     <Container>
-      <div className="bg-primary rounded-xl w-full h-auto px-4 py-8 flex flex-col justify-evenly md:max-w-5xl md:px-8 md:py-12">
+      <div className="bg-primary rounded-xl w-full px-4 py-8 flex flex-col h-full overflow-auto md:h-auto md:max-w-5xl md:px-8 md:py-12">
         <div className="flex items-center">
           <FaPaperPlane className="text-white mr-6 w-12 h-12" />
 
           <Title size="30">Be in touch</Title>
         </div>
 
-        <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col flex-1" onSubmit={handleSubmit(onSubmit)}>
           <Input label="Name" name="name" register={register("name")} error={errors.name} />
 
           <Input label="Email" name="email" register={register("email")} error={errors.email} />
@@ -42,7 +42,10 @@ const Contact = () => {
             error={errors.message}
           />
 
-          <button type="submit" className="w-full bg-secondary py-2 rounded-lg mx-auto xs:w-72">
+          <button
+            type="submit"
+            className="w-full bg-secondary py-2 rounded-lg mx-auto mt-12 xs:w-72"
+          >
             <Text size="24">Submit</Text>
           </button>
         </form>

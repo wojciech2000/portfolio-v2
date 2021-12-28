@@ -23,7 +23,7 @@ const Projects = () => (
     <Swiper {...swiperProps}>
       {projectsList.map(({ name, desktop, mobile, githubLink, liveLink, technologies }, index) => (
         <SwiperSlide className="!h-full md:!h-auto flex" key={index}>
-          <div className="bg-primary p-4 rounded-xl w-full ">
+          <div className="bg-primary p-4 rounded-xl w-full overflow-auto">
             <div className="flex mb-4">
               <div className="w-9/12 pr-4">
                 <img src={desktop} alt={name} className="object-cover rounded-xl" />

@@ -21,7 +21,7 @@ const Skills = () => {
 
   return (
     <Container>
-      <div className="w-full flex flex-col h-full md:max-w-4xl">
+      <div className="w-full flex flex-col h-full md:max-w-4xl md:h-auto">
         <Swiper onSwiper={setThumbsSwiper} {...swiperProps}>
           {skillsList.map(({ icon, label }, index) => (
             <SwiperSlide
@@ -63,7 +63,7 @@ const Skills = () => {
           {skillsList.map(({ skills }, index) => (
             <SwiperSlide
               key={index}
-              className="bg-primary rounded-xl w-full flex justify-center !h-auto"
+              className="bg-primary rounded-xl w-full flex justify-center overflow-y-auto !h-auto"
             >
               <ul className="flex flex-col">
                 {skills.map((skill, index) => (

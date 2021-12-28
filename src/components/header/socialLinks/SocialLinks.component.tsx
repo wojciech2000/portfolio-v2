@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 import useToggle from "utilities/hooks/useToggle.hook";
 
-const ICON_CLASSES = "text-white w-10 h-10 md:w-8 md:h-8";
+const ICON_CLASSES = "text-white w-8 h-8";
 const socialMedias = [
   {
     icon: <AiFillGithub className={ICON_CLASSES} />,
@@ -24,7 +24,7 @@ const SocialLinks = () => {
     <div className="fixed bottom-0 right-mobile-spacing z-50 md:static">
       <div
         className={clsx(
-          "duration-200 transform transition-transform md:translate-y-0",
+          "duration-200 transform transition-transform md:translate-y-0 bg-black rounded-t-full md:bg-transparent",
           isOpen ? "translate-y-0" : "translate-y-full",
         )}
       >
@@ -35,7 +35,7 @@ const SocialLinks = () => {
             <div
               key={index}
               className={clsx(
-                "flex flex-col justify-center items-center mb-2",
+                "flex flex-col justify-center items-center mb-2 p-1",
                 isLast && "md:mb-0",
               )}
             >
