@@ -12,6 +12,7 @@ import Text from "components/common/text/Text.component";
 import Title from "components/common/title/Title.component";
 import clsx from "clsx";
 import { toast } from "react-toastify";
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from "utilities/config/env";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -32,10 +33,10 @@ const Contact = () => {
       if (!formRef.current) return;
 
       await emailjs.sendForm(
-        "service_r7piyjc",
-        "template_jfpqky9",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         formRef.current,
-        "user_UACAEqtxcAE2C5SG8pjEs",
+        EMAILJS_USER_ID,
       );
 
       reset();

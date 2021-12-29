@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 import Container from "components/common/container/Container.component";
 import Text from "components/common/text/Text.component";
-import { skillsList } from "utilities/helpers/skillsList";
+import { skillsList } from "./skillsList";
 import Title from "components/common/title/Title.component";
 
 SwiperCore.use([Thumbs]);

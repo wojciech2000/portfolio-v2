@@ -3,7 +3,7 @@ import SwiperCore, { Pagination } from "swiper";
 
 import Container from "components/common/container/Container.component";
 import Text from "components/common/text/Text.component";
-import { projectsList } from "utilities/helpers/projectsList";
+import { projectsList } from "./projectsList";
 
 SwiperCore.use([Pagination]);
 

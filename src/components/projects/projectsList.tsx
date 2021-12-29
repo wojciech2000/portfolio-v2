@@ -4,6 +4,8 @@ import eliminationTableDesktop from "images/elimination_table-desktop.png";
 import eliminationTableMobile from "images/elimination_table-mobile.png";
 import portfolioDesktop from "images/portfolio-desktop.png";
 import portfolioMobile from "images/portfolio-mobile.png";
+import portfolioDesktopv2 from "images/portfolio-v2-desktop.png";
+import portfolioMobilev2 from "images/portfolio-v2-mobile.png";
 import eCommerceDesktop from "images/e-commerce-desktop.png";
 import eCommerceMobile from "images/e-commerce-mobile.png";
 import teamMatesFinderDesktop from "images/team-mate-finder-desktop.png";
@@ -58,5 +60,13 @@ export const projectsList = [
     mobile: portfolioMobile,
     technologies: ["React", "Styl.-Comp."],
     githubLink: "https://github.com/wojciech2000/portfolio",
+    liveLink: "    https://wojciech2000.github.io/portfolio",
+  },
+  {
+    name: "Portfolio v2",
+    desktop: portfolioDesktopv2,
+    mobile: portfolioMobilev2,
+    technologies: ["React", "TS", "Tailwind"],
+    githubLink: "https://github.com/wojciech2000/portfolio-v2",
   },
 ];
