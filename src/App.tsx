@@ -8,6 +8,7 @@ import About from "components/about/About.component";
 import Skills from "components/skills/Skills.component";
 import Projects from "components/projects/Projects.component";
 import Contact from "components/contact/Contact.component";
+import Toast from "components/toast/Toast.component";
 
 const App = () => (
   <div className="w-full min-h-screen bg-mainBg w-">
@@ -24,6 +25,7 @@ const App = () => (
     </Router>
 
     <Particles />
+    <Toast />
   </div>
 );
 
