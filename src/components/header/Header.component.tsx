@@ -34,7 +34,7 @@ const Header = () => {
       )}
     >
       <div className="px-mobile-spacing flex justify-between items-center h-mobile-header md:h-screen md:flex-col md:pt-8 md:items-baseline">
-        <Link to={routes.home} onClick={closeMenu} className="flex md:block">
+        <Link to={routes.home} onClick={closeMenu} className="contents md:flex md:mb-1">
           <button>
             <AiOutlineHome className={ICON_CLASSES} />
           </button>

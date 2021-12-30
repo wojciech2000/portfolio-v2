@@ -44,12 +44,12 @@ const SocialLinks = () => {
             <div
               key={index}
               className={clsx(
-                "flex flex-col justify-center items-center mb-2 p-1",
+                "flex flex-col justify-center items-center mb-1 p-1 pb-0",
                 isLast && "md:mb-0",
               )}
             >
-              <a href={link} target="_blank">
-                <button className="mb-2">{icon}</button>
+              <a href={link} target="_blank" className="mb-2 flex">
+                <button>{icon}</button>
               </a>
 
               <div className={clsx("w-0.5 bg-white", isLast ? "h-20" : "h-8")} />
