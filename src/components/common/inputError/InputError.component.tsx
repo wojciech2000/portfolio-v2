@@ -1,7 +1,7 @@
 import React from "react";
+import clsx from "clsx";
 
 import Text from "components/common/text/Text.component";
-import clsx from "clsx";
 
 interface IInputError {
   errorMessage?: string;

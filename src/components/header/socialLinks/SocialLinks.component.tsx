@@ -10,10 +10,12 @@ import useToggle from "utilities/hooks/useToggle.hook";
 const ICON_CLASSES = "text-white w-8 h-8";
 const socialMedias = [
   {
+    name: "Github",
     icon: <AiFillGithub className={ICON_CLASSES} />,
     link: "https://github.com/wojciech2000",
   },
   {
+    name: "Linkedin",
     icon: <BsLinkedin className={ICON_CLASSES} />,
     link: "https://www.linkedin.com/in/wojciech-antonik-853868205/",
   },
@@ -37,7 +39,7 @@ const SocialLinks = () => {
           isOpen ? "translate-y-0" : "translate-y-full",
         )}
       >
-        {socialMedias.map(({ icon, link }, index, arr) => {
+        {socialMedias.map(({ name, icon, link }, index, arr) => {
           const isLast = index === arr.length - 1;
 
           return (
@@ -49,7 +51,7 @@ const SocialLinks = () => {
               )}
             >
               <a href={link} target="_blank" className="mb-2 flex">
-                <button>{icon}</button>
+                <button aria-label={name}>{icon}</button>
               </a>
 
               <div className={clsx("w-0.5 bg-white", isLast ? "h-20" : "h-8")} />
@@ -60,6 +62,7 @@ const SocialLinks = () => {
 
       <button
         onClick={() => toggleOpen()}
+        aria-label="Toggle social links"
         className="absolute bottom-0 left-1/2 transform transition-transform translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full md:hidden"
       >
         <HiChevronUp

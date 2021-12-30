@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FaPaperPlane } from "react-icons/fa";
 import emailjs from "emailjs-com";
+import clsx from "clsx";
+import { toast } from "react-toastify";
 
 import { contactFormSchema, IContactForm } from "./Contact.model";
 import Input from "components/common/input/Input.component";
@@ -10,8 +12,7 @@ import Textarea from "components/common/textarea/Textarea.component";
 import Container from "components/common/container/Container.component";
 import Text from "components/common/text/Text.component";
 import Title from "components/common/title/Title.component";
-import clsx from "clsx";
-import { toast } from "react-toastify";
+
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from "utilities/config/env";
 
 const Contact = () => {

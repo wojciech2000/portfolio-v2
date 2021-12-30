@@ -35,12 +35,12 @@ const Header = () => {
     >
       <div className="px-mobile-spacing flex justify-between items-center h-mobile-header md:h-screen md:flex-col md:pt-8 md:items-baseline">
         <Link to={routes.home} onClick={closeMenu} className="contents md:flex md:mb-1">
-          <button>
+          <button aria-label="home page">
             <AiOutlineHome className={ICON_CLASSES} />
           </button>
         </Link>
 
-        <button onClick={() => toggleOpen()} className="md:hidden">
+        <button onClick={() => toggleOpen()} aria-label="Toggle menu" className="md:hidden">
           <FaHamburger className={ICON_CLASSES} />
         </button>
 
