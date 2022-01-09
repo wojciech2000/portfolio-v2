@@ -9,10 +9,10 @@ const About = () => {
         <img src={me} alt="me" className="w-2/4 h-auto mb-8 rounded-xl md:w-3/5 lg:w-1/3" />
 
         <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut
+          My name is Wojciech, I'm software developer, my main specialisation is front-end but I
+          also know back-end. I enjoy learning new things and create usefull software that will help
+          people. I strive to constant development and broaden my skills and competencies to become
+          an expert in my field, and make world a better place :D.
         </Text>
       </div>
     </Container>
