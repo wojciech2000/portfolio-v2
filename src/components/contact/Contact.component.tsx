@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FaPaperPlane } from "react-icons/fa";
@@ -18,13 +18,11 @@ import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from "utilit
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
-  const [isLoading, setIsLoading] = useState(false);
-
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<IContactForm>({
     resolver: yupResolver(contactFormSchema),
   });
@@ -43,17 +41,11 @@ const Contact = () => {
       reset();
     };
 
-    setIsLoading(true);
-
-    try {
-      await toast.promise(sendEmail, {
-        error: "An error occurred",
-        pending: "Email is being sent",
-        success: "Successfully sent email",
-      });
-    } finally {
-      setIsLoading(false);
-    }
+    await toast.promise(sendEmail, {
+      error: "An error occurred",
+      pending: "Email is being sent",
+      success: "Successfully sent email",
+    });
   };
 
   return (
@@ -81,9 +73,9 @@ const Contact = () => {
             type="submit"
             className={clsx(
               "w-full bg-secondary py-2 rounded-lg mx-auto mt-12 xs:w-72",
-              isLoading && "opacity-50 cursor-default",
+              isSubmitting && "opacity-50 cursor-default",
             )}
-            disabled={isLoading}
+            disabled={isSubmitting}
           >
             <Text size="24">Submit</Text>
           </button>
